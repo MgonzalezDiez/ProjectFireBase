@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Admin from '../views/Admin'
 import firebase from 'firebase'
+import NotFound from '../views/NotFound'
+import BeerComponent from '@/components/BeerComponent'
 
 Vue.use(VueRouter)
 
@@ -19,6 +21,19 @@ Vue.use(VueRouter)
     meta:{
       login: true
     }
+  },
+  {
+    path: '/beers/:id',
+    name: 'Beer',
+    component: BeerComponent,
+    meta: {
+      login: true
+    }
+  },
+  {
+    path: '/*',
+    name: 'NotFound',
+    component: NotFound
   }
 ]
 
